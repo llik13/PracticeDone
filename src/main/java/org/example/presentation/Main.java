@@ -1,4 +1,4 @@
-package org.example;
+package org.example.presentation;
 import com.fasterxml.jackson.*;
 
 public class Main {
