@@ -13,5 +13,5 @@ public enum Genre {
     WESTERN,
     MUSICAL,
     ADVENTURE,
-    ANIME
+    ANIME;
 }

@@ -7,15 +7,27 @@ import java.util.Objects;
 public class Film {
     private final String name;
     private final FilmDirector filmDirector;
-    private final LocalDate yearRelease;
+    private final LocalDate dateRelease;
     private final List<Genre> genres;
     private int imdbRating;
 
-    public Film(String name, FilmDirector filmDirector, LocalDate yearRelease, List<Genre> genres) {
+    public Film(String name, FilmDirector filmDirector, LocalDate dateRelease, List<Genre> genres) {
         this.name = name;
         this.filmDirector = filmDirector;
-        this.yearRelease = yearRelease;
+        this.dateRelease = dateRelease;
         this.genres = genres;
+    }
+
+    public Film(String name, FilmDirector filmDirector, LocalDate dateRelease, List<Genre> genres, int imdbRating){
+        this.name = name;
+        this.filmDirector = filmDirector;
+        this.dateRelease = dateRelease;
+        this.genres = genres;
+        this.imdbRating = imdbRating;
+    }
+
+    public void addGenre(Genre genre){
+        switch ()
     }
 
     public String getName() {
@@ -26,8 +38,8 @@ public class Film {
         return filmDirector;
     }
 
-    public LocalDate getYearRelease() {
-        return yearRelease;
+    public LocalDate getDate() {
+        return dateRelease;
     }
 
     public List<Genre> getGenres() {
@@ -47,7 +59,7 @@ public class Film {
         return "Film{" +
                 "name='" + name + '\'' +
                 ", filmDirector=" + filmDirector +
-                ", yearRelease=" + yearRelease +
+                ", date=" + dateRelease +
                 ", genres=" + genres +
                 ", imdbRating=" + imdbRating +
                 '}';
@@ -58,11 +70,11 @@ public class Film {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Film film = (Film) o;
-        return imdbRating == film.imdbRating && Objects.equals(name, film.name) && Objects.equals(filmDirector, film.filmDirector) && Objects.equals(yearRelease, film.yearRelease) && Objects.equals(genres, film.genres);
+        return imdbRating == film.imdbRating && Objects.equals(name, film.name) && Objects.equals(filmDirector, film.filmDirector) && Objects.equals(dateRelease, film.dateRelease) && Objects.equals(genres, film.genres);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, filmDirector, yearRelease, genres, imdbRating);
+        return Objects.hash(name, filmDirector, dateRelease, genres, imdbRating);
     }
 }

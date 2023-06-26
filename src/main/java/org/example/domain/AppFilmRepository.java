@@ -6,8 +6,11 @@ import java.util.List;
 
 public class AppFilmRepository implements FilmRepository {
 
-    List<Film> films;
+    private List<Film> films;
 
+    public List<Film> getFilms() {
+        return films;
+    }
 
     @Override
     public void addFilm(Film film) {
