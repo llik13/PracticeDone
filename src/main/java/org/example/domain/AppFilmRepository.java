@@ -18,7 +18,8 @@ public class AppFilmRepository implements FilmRepository {
     }
 
     @Override
-    public void removeFilm(Film film) {
+    public void removeFilm(String name, LocalDate yearRelease) {
+        Film film = searchByNameYear(name, yearRelease);
         for (int i = 0; i < films.size(); i++) {
             if (film.equals(films.get(i))){
                 films.remove(film);
@@ -28,7 +29,7 @@ public class AppFilmRepository implements FilmRepository {
     }
 
     @Override
-    public void editRating(Film film, int rating) {
+    public void editRating(Film film, float rating) {
         for (int i = 0; i < films.size(); i++) {
             if (films.get(i).equals(film)){
                 film.setImdbRating(rating);

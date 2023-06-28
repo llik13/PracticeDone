@@ -9,7 +9,7 @@ public class Film {
     private final FilmDirector filmDirector;
     private final LocalDate dateRelease;
     private final List<Genre> genres;
-    private int imdbRating;
+    private float imdbRating;
 
     public Film(String name, FilmDirector filmDirector, LocalDate dateRelease, List<Genre> genres) {
         this.name = name;
@@ -18,16 +18,12 @@ public class Film {
         this.genres = genres;
     }
 
-    public Film(String name, FilmDirector filmDirector, LocalDate dateRelease, List<Genre> genres, int imdbRating){
+    public Film(String name, FilmDirector filmDirector, LocalDate dateRelease, List<Genre> genres, float imdbRating){
         this.name = name;
         this.filmDirector = filmDirector;
         this.dateRelease = dateRelease;
         this.genres = genres;
         this.imdbRating = imdbRating;
-    }
-
-    public void addGenre(Genre genre){
-        switch ()
     }
 
     public String getName() {
@@ -46,11 +42,11 @@ public class Film {
         return genres;
     }
 
-    public int getImdbRating() {
+    public float getImdbRating() {
         return imdbRating;
     }
 
-    public void setImdbRating(int imdbRating) {
+    public void setImdbRating(float imdbRating) {
         this.imdbRating = imdbRating;
     }
 

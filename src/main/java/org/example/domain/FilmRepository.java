@@ -6,9 +6,9 @@ import java.time.LocalDate;
 public interface FilmRepository {
     void addFilm(Film film);
 
-    void removeFilm(Film film);
+    void removeFilm(String name, LocalDate yearRelease);
 
-    void editRating(Film film, int rating);
+    void editRating(Film film, float rating);
 
     Film searchByNameYear(String name, LocalDate yearRelease);
 
