@@ -1,29 +1,39 @@
 package org.example.domain.Data;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Objects;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Film {
-    private final String name;
-    private final FilmDirector filmDirector;
-    private final LocalDate dateRelease;
-    private final List<Genre> genres;
+    @JsonProperty("name")
+    private String name;
+    @JsonProperty("filmDirector")
+
+    private FilmDirector filmDirector;
+    @JsonProperty("dateRelease")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy/MM/dd")
+    private LocalDate dateRelease;
+    @JsonProperty("genres")
+    private List<Genre> genres;
+    @JsonProperty("imdbRating")
     private float imdbRating;
 
-    public Film(String name, FilmDirector filmDirector, LocalDate dateRelease, List<Genre> genres) {
-        this.name = name;
-        this.filmDirector = filmDirector;
-        this.dateRelease = dateRelease;
-        this.genres = genres;
-    }
 
-    public Film(String name, FilmDirector filmDirector, LocalDate dateRelease, List<Genre> genres, float imdbRating){
+
+    public Film(String name, FilmDirector filmDirector, LocalDate dateRelease, List<Genre> genres, float imdbRating) {
         this.name = name;
         this.filmDirector = filmDirector;
         this.dateRelease = dateRelease;
         this.genres = genres;
         this.imdbRating = imdbRating;
+    }
+
+    public Film() {
     }
 
     public String getName() {

@@ -15,56 +15,56 @@ public enum Genre {
     ADVENTURE,
     ANIME;
     public Genre addGenre(String genre){
-        switch (genre){
-            case "Noir" ->
+        switch (genre.toLowerCase()){
+            case "noir" ->
             {
                 return NOIR;
             }
-            case "Anime" ->
+            case "anime" ->
             {
                 return ANIME;
             }
-            case "Adventure" ->
+            case "adventure" ->
             {
                 return ADVENTURE;
             }
-            case "Musical" ->
+            case "musical" ->
             {
                 return MUSICAL;
             }
-            case "Thriller" ->
+            case "thriller" ->
             {
                 return THRILLER;
             }
-            case "Animated" ->
+            case "animated" ->
             {
                 return ANIMATED;
             }
-            case "Romance" ->
+            case "romance" ->
             {
                 return ROMANCE;
             }
-            case "Drama" ->
+            case "drama" ->
             {
                 return DRAMA;
             }
-            case "Comedy" ->
+            case "comedy" ->
             {
                 return COMEDY;
             }
-            case "Western" ->
+            case "western" ->
             {
                 return WESTERN;
             }
-            case "Historical" ->
+            case "historical" ->
             {
                 return HISTORICAL;
             }
-            case "Horror" ->
+            case "horror" ->
             {
                 return HORROR;
             }
-            case "Fantasy" ->
+            case "fantasy" ->
             {
                 return FANTASY;
             }

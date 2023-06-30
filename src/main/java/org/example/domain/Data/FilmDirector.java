@@ -1,26 +1,39 @@
 package org.example.domain.Data;
 
 import java.time.LocalDate;
-import java.util.List;
-import java.util.Objects;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
-import org.example.domain.AppFilmRepository;
-
+@JsonIgnoreProperties
 public class FilmDirector {
+    @JsonProperty("firstName")
     private String firsName;
+    @JsonProperty("surName")
     private String surName;
+    @JsonProperty("birthDate")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy/MM/dd")
     private LocalDate birthDate;
+    /* @JsonProperty("filmList")
+    @JsonIgnore
     private List<Film> filmList;
+    */
+
 
     public FilmDirector(String firsName, String surName, LocalDate birthDate) {
         this.firsName = firsName;
         this.surName = surName;
         this.birthDate = birthDate;
+        //filmList = new ArrayList<Film>();
     }
 
-    public void createFilms(Film film){
+    public FilmDirector() {
+    }
+
+   /* public void createFilms(Film film){
         filmList.add(film);
     }
+    */
 
     public String getFirsName() {
         return firsName;
@@ -46,11 +59,24 @@ public class FilmDirector {
         this.birthDate = birthDate;
     }
 
-    public List<Film> getFilm() {
+    /*\public List<Film> getFilm() {
         return filmList;
     }
 
     public void setFilm(List<Film> film) {
         this.filmList = film;
     }
+
+     */
+
+   /* public List<Film> getFilmList() {
+        return filmList;
+    }
+
+    */
+
+    /*public void setFilmList(List<Film> filmList) {
+        this.filmList = filmList;
+    }
+     */
 }

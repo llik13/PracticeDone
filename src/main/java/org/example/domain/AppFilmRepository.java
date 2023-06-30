@@ -1,15 +1,21 @@
 package org.example.domain;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.example.domain.Data.Film;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 public class AppFilmRepository implements FilmRepository {
 
+    @JsonProperty("films")
     private List<Film> films;
 
     public List<Film> getFilms() {
         return films;
+    }
+    public AppFilmRepository() {
+        films = new ArrayList<>();
     }
 
     @Override
