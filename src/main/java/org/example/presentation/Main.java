@@ -19,7 +19,7 @@ public class Main {
         AppFilmRepository appFilmRepository = new AppFilmRepository();
         Genre genre = Genre.ANIMATED;
         GsonConverter gsonConverter = new GsonConverter();
-        GsonConverter.deserialize(appFilmRepository);
+        appFilmRepository = GsonConverter.deserialize(appFilmRepository);
 
 
         while (true){
@@ -132,9 +132,19 @@ public class Main {
 
                     appFilmRepository.editRating(film2, rating2);
                     break;
-                case "exit" :
-                    gsonConverter.serialize(appFilmRepository);
+                case "print":
+                    assert appFilmRepository != null;
+                    appFilmRepository.printTable();
                     break;
+                case "sort by name":
+                    appFilmRepository.sortByName();
+                    break;
+                case "sort by data":
+                    appFilmRepository.sortByRelease();
+                    break;
+                case "exit":
+                    gsonConverter.serialize(appFilmRepository);
+                    return;
             }
         }
     }

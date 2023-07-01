@@ -17,10 +17,10 @@ public class GsonConverter{
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.registerModule(new JavaTimeModule());
         String json = objectMapper.writeValueAsString(appFilmRepository);
-        objectMapper.writeValue(Paths.get("films.json").toFile(), appFilmRepository);
+        objectMapper.writeValue(Paths.get("film.json").toFile(), appFilmRepository);
     }
 
-    public static void deserialize(AppFilmRepository appFilmRepository) {
+    public static AppFilmRepository deserialize(AppFilmRepository appFilmRepository) {
         try {
             // create object mapper instance
             ObjectMapper mapper = new ObjectMapper();
@@ -28,13 +28,11 @@ public class GsonConverter{
             mapper.findAndRegisterModules();
 
             // convert a JSON string to a Book object
-            appFilmRepository = mapper.readValue(Paths.get("film.json").toFile(), AppFilmRepository.class);
-
-            // print book
-            System.out.println(appFilmRepository.getFilms() + " " + appFilmRepository.getFilms().get(0).getFilmDirector().toString());
+            return mapper.readValue(Paths.get("film.json").toFile(), AppFilmRepository.class);
 
         } catch (Exception ex) {
             ex.printStackTrace();
         }
+        return null;
     }
 }

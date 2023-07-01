@@ -12,4 +12,9 @@ public interface FilmRepository {
 
     Film searchByNameYear(String name, LocalDate yearRelease);
 
+    void printTable();
+
+    void sortByName();
+    void sortByRelease();
+
 }
