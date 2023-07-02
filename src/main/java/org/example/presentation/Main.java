@@ -142,6 +142,9 @@ public class Main {
                 case "sort by data":
                     appFilmRepository.sortByRelease();
                     break;
+                case "help":
+                    System.out.println("Exciting commands: \n print \n sort by name \n sort by name \n add \n remove \n search \n edit rating \n exit \n help");
+                    break;
                 case "exit":
                     gsonConverter.serialize(appFilmRepository);
                     return;
